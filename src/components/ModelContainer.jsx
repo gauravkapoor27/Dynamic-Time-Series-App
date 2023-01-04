@@ -1,17 +1,20 @@
 import ModelParametersContainer from "./ModelParametersContainer";
-import { modelList } from "../data/modelParameters";
+import { modelList, distributionList } from "../data/modelParameters";
 
 const ModelContainer = ({
   params,
   setParams,
   selectedModel,
   setSelectedModel,
+  selectedDistribution,
+  setSelectedDistribution,
 }) => {
   const renderInput = (param) => {
     return <option key={param}>{param}</option>;
   };
 
   const models = modelList.map((model) => Object.keys(model)[0]);
+  const distributions = distributionList;
 
   return (
     <div className="model-container">
@@ -26,12 +29,23 @@ const ModelContainer = ({
           }}>
           {models.map((model) => renderInput(model))}
         </select>
+        <p>Select a distribution:</p>
+        <select
+          name="dist-select"
+          id="dist-select"
+          className="model-select"
+          onChange={(e) => {
+            setSelectedDistribution(e.target.value);
+          }}>
+          {distributions.map((model) => renderInput(model))}
+        </select>
       </section>
 
       <ModelParametersContainer
         params={params}
         setParams={setParams}
         selectedModel={selectedModel}
+        selectedDistribution={selectedDistribution}
       />
     </div>
   );

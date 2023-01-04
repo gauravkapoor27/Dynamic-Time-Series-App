@@ -15,6 +15,7 @@ function App() {
   const [speed, setSpeed] = useState(500);
   const [params, setParams] = useState(parameters);
   const [selectedModel, setSelectedModel] = useState("Brownian Motion");
+  const [selectedDistribution, setSelectedDistribution] = useState("Normal");
 
   const lineSeriesRef = useRef(null);
   const lastValRef = useRef(null);
@@ -27,7 +28,8 @@ function App() {
     params,
     setParams,
     speed,
-    selectedModel
+    selectedModel,
+    selectedDistribution
   );
 
   return (
@@ -37,6 +39,8 @@ function App() {
         setParams={setParams}
         selectedModel={selectedModel}
         setSelectedModel={setSelectedModel}
+        selectedDistribution={selectedDistribution}
+        setSelectedDistribution={setSelectedDistribution}
       />
       <ChartContainer />
       <ChartInteractionPanel

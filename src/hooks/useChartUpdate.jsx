@@ -1,5 +1,5 @@
 import { generateNewData } from "../utils/generateNewData";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 let interval = null;
 
@@ -10,8 +10,11 @@ const useChartUpdate = (
   params,
   setParams,
   speed,
-  selectedModel
+  selectedModel,
+  selectedDistribution
 ) => {
+  const returnRef = useRef(0);
+
   useEffect(() => {
     if (playState) {
       interval = setInterval(() => {
@@ -21,7 +24,9 @@ const useChartUpdate = (
           params,
           setParams,
           speed,
-          selectedModel
+          selectedModel,
+          selectedDistribution,
+          returnRef
         );
       }, speed);
     } else {
@@ -31,7 +36,17 @@ const useChartUpdate = (
     return () => {
       clearInterval(interval);
     };
-  }, [playState, speed, params, setParams, lastVal, lineSeries, selectedModel]);
+  }, [
+    playState,
+    speed,
+    params,
+    setParams,
+    lastVal,
+    lineSeries,
+    selectedModel,
+    selectedDistribution,
+    returnRef,
+  ]);
 };
 
 export { useChartUpdate };
