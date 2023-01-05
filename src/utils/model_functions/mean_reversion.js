@@ -1,23 +1,12 @@
-import normalRandomNumber from "../normalRandomNumber";
-import laplaceRandomNumber from "../laplaceRandomNumber";
-
 const mean_reversion = (
   params,
   setParams,
   lastVal,
   speed,
   returnVal,
-  selectedDistribution
+  selectedDistribution,
+  err
 ) => {
-  let err;
-  const sigma = params.volatility;
-
-  if (selectedDistribution === "Normal") {
-    err = sigma * normalRandomNumber();
-  } else if (selectedDistribution === "Laplace") {
-    err = laplaceRandomNumber(params.scale);
-  }
-
   const meanLevel = params["mean level"];
 
   const alpha = params["reversion rate"];

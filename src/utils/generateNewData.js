@@ -3,6 +3,9 @@ import white_noise from "./model_functions/white_noise";
 import mean_reversion from "./model_functions/mean_reversion";
 import garch from "./model_functions/garch";
 
+import normalRandomNumber from "./normalRandomNumber";
+import laplaceRandomNumber from "./laplaceRandomNumber";
+
 const generateNewData = (
   lastVal,
   lineSeries,
@@ -17,6 +20,13 @@ const generateNewData = (
 ) => {
   let newVal;
 
+  let err;
+  if (selectedDistribution === "Normal") {
+    err = params.volatility * normalRandomNumber();
+  } else if (selectedDistribution === "Laplace") {
+    err = laplaceRandomNumber(params.scale);
+  }
+
   if (selectedModel === "Brownian Motion") {
     newVal = brownian_motion(
       params,
@@ -24,7 +34,8 @@ const generateNewData = (
       lastVal,
       speed,
       returnVal,
-      selectedDistribution
+      selectedDistribution,
+      err
     );
   } else if (selectedModel === "White Noise") {
     newVal = white_noise(
@@ -33,7 +44,8 @@ const generateNewData = (
       lastVal,
       speed,
       returnVal,
-      selectedDistribution
+      selectedDistribution,
+      err
     );
   } else if (selectedModel === "Mean Reversion") {
     newVal = mean_reversion(
@@ -42,7 +54,8 @@ const generateNewData = (
       lastVal,
       speed,
       returnVal,
-      selectedDistribution
+      selectedDistribution,
+      err
     );
   } else if (selectedModel === "GARCH(1,1)") {
     newVal = garch(
@@ -53,7 +66,8 @@ const generateNewData = (
       returnVal,
       selectedDistribution,
       garchSigma,
-      setGarchSigma
+      setGarchSigma,
+      err
     );
   } else {
     newVal = lastVal.current;

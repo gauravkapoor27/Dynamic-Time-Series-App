@@ -1,25 +1,16 @@
-import normalRandomNumber from "../normalRandomNumber";
-import laplaceRandomNumber from "../laplaceRandomNumber";
-
 const brownian_motion = (
   params,
   setParams,
   lastVal,
   speed,
   returnVal,
-  selectedDistribution
+  selectedDistribution,
+  err
 ) => {
-  let err;
-  const sigma = params.volatility;
-
-  if (selectedDistribution === "Normal") {
-    err = sigma * Math.sqrt(1 / speed) * normalRandomNumber();
-  } else if (selectedDistribution === "Laplace") {
-    err = laplaceRandomNumber(params.scale);
-  }
   const mu = params.drift;
 
-  const newVal = lastVal.current + mu * (1 / speed) + err;
+  const newVal =
+    lastVal.current + mu * (1 / speed) + err * Math.sqrt(1 / speed);
 
   returnVal.current = newVal - lastVal.current;
   lastVal.current = newVal;

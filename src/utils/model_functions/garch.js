@@ -1,6 +1,3 @@
-import normalRandomNumber from "../normalRandomNumber";
-import laplaceRandomNumber from "../laplaceRandomNumber";
-
 const garch = (
   params,
   setParams,
@@ -9,15 +6,9 @@ const garch = (
   returnVal,
   selectedDistribution,
   garchSigma,
-  setGarchSigma
+  setGarchSigma,
+  err
 ) => {
-  let err;
-  if (selectedDistribution === "Normal") {
-    err = params.volatility * normalRandomNumber();
-  } else if (selectedDistribution === "Laplace") {
-    err = laplaceRandomNumber(params.scale);
-  }
-
   const alpha0 = params["alpha0"];
   const alpha1 = params["alpha1"];
   const beta1 = params["beta1"];
