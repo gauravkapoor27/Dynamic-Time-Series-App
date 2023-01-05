@@ -15,8 +15,20 @@ const ModelParametersContainer = ({
         </p>
         <input
           type="range"
-          min={param.min}
-          max={param.max}
+          min={
+            selectedModel === "GARCH(1,1)" &&
+            ["volatility", "scale"].includes(param.name)
+              ? 0
+              : param.min
+          }
+          max={
+            selectedModel === "GARCH(1,1)" &&
+            ["volatility", "scale"].includes(param.name)
+              ? param.name === "volatility"
+                ? 1000
+                : 500
+              : param.max
+          }
           value={params[param.name] * param.scale}
           className={`slider-${param.name}`}
           onChange={(e) => {

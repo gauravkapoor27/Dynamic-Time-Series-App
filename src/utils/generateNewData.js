@@ -11,7 +11,9 @@ const generateNewData = (
   speed,
   selectedModel,
   selectedDistribution,
-  returnVal
+  returnVal,
+  garchSigma,
+  setGarchSigma
 ) => {
   let newVal;
 
@@ -49,7 +51,9 @@ const generateNewData = (
       lastVal,
       speed,
       returnVal,
-      selectedDistribution
+      selectedDistribution,
+      garchSigma,
+      setGarchSigma
     );
   } else {
     newVal = lastVal.current;

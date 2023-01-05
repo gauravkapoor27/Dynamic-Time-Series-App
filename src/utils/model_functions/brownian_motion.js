@@ -10,16 +10,16 @@ const brownian_motion = (
   selectedDistribution
 ) => {
   let err;
+  const sigma = params.volatility;
+
   if (selectedDistribution === "Normal") {
-    err = normalRandomNumber();
+    err = sigma * Math.sqrt(1 / speed) * normalRandomNumber();
   } else if (selectedDistribution === "Laplace") {
     err = laplaceRandomNumber(params.scale);
   }
   const mu = params.drift;
-  const sigma = params.volatility;
 
-  const newVal =
-    lastVal.current + mu * (1 / speed) + sigma * Math.sqrt(1 / speed) * err;
+  const newVal = lastVal.current + mu * (1 / speed) + err;
 
   returnVal.current = newVal - lastVal.current;
   lastVal.current = newVal;

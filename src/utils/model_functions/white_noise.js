@@ -10,15 +10,16 @@ const white_noise = (
   selectedDistribution
 ) => {
   let err;
+  const sigma = params.volatility;
   if (selectedDistribution === "Normal") {
-    err = normalRandomNumber();
+    err = sigma * normalRandomNumber();
   } else if (selectedDistribution === "Laplace") {
     err = laplaceRandomNumber(params.scale);
   }
 
   const meanLevel = params["mean level"];
-  const sigma = params.volatility;
-  const newVal = meanLevel + sigma * err;
+
+  const newVal = meanLevel + err;
   returnVal.current = newVal - lastVal.current;
   lastVal.current = newVal;
 

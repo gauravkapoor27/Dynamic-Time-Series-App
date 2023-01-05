@@ -8,6 +8,14 @@ const ChartInteractionPanel = ({
   speed,
   setSpeed,
 }) => {
+  const speedText = () => {
+    if (speed === 1000) {
+      return " tick/s";
+    } else {
+      return " ticks/s";
+    }
+  };
+
   return (
     <div className="chart-interaction">
       <button
@@ -36,7 +44,11 @@ const ChartInteractionPanel = ({
             setSpeed(1000 / e.target.value);
           }}
         />
-        <p>{Math.round(1000 / speed)} ticks/s</p>
+
+        <p>
+          {Math.round(1000 / speed)}
+          {speedText()}
+        </p>
       </div>
     </div>
   );

@@ -26,6 +26,13 @@ const ModelContainer = ({
           className="model-select"
           onChange={(e) => {
             setSelectedModel(e.target.value);
+            if (e.target.value === "GARCH(1,1)") {
+              setParams({
+                ...params,
+                volatility: 0.5,
+                scale: 0.25,
+              });
+            }
           }}>
           {models.map((model) => renderInput(model))}
         </select>

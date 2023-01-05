@@ -1,5 +1,5 @@
 import { generateNewData } from "../utils/generateNewData";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 let interval = null;
 
@@ -14,6 +14,7 @@ const useChartUpdate = (
   selectedDistribution
 ) => {
   const returnRef = useRef(0);
+  const [garchSigma, setGarchSigma] = useState(1);
 
   useEffect(() => {
     if (playState) {
@@ -26,7 +27,9 @@ const useChartUpdate = (
           speed,
           selectedModel,
           selectedDistribution,
-          returnRef
+          returnRef,
+          garchSigma,
+          setGarchSigma
         );
       }, speed);
     } else {
@@ -46,6 +49,8 @@ const useChartUpdate = (
     selectedModel,
     selectedDistribution,
     returnRef,
+    garchSigma,
+    setGarchSigma,
   ]);
 };
 

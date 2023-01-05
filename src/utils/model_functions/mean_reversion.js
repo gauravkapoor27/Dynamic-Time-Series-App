@@ -10,18 +10,19 @@ const mean_reversion = (
   selectedDistribution
 ) => {
   let err;
+  const sigma = params.volatility;
+
   if (selectedDistribution === "Normal") {
-    err = normalRandomNumber();
+    err = sigma * normalRandomNumber();
   } else if (selectedDistribution === "Laplace") {
     err = laplaceRandomNumber(params.scale);
   }
 
   const meanLevel = params["mean level"];
-  const sigma = params.volatility;
+
   const alpha = params["reversion rate"];
 
-  const newVal =
-    lastVal.current + alpha * (meanLevel - lastVal.current) + sigma * err;
+  const newVal = lastVal.current + alpha * (meanLevel - lastVal.current) + err;
   returnVal.current = newVal - lastVal.current;
   lastVal.current = newVal;
 

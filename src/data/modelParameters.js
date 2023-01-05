@@ -2,7 +2,7 @@ const modelList = [
   { "Brownian Motion": ["volatility", "drift"] },
   { "White Noise": ["volatility", "mean level"] },
   { "Mean Reversion": ["volatility", "mean level", "reversion rate"] },
-  { "GARCH(1,1)": ["mean level", "alpha0", "alpha1", "beta1"] },
+  { "GARCH(1,1)": ["volatility", "mean level", "alpha0", "alpha1", "beta1"] },
 ];
 
 const distributionList = ["Normal", "Laplace"];

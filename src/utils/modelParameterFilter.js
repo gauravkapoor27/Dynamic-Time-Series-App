@@ -5,12 +5,16 @@ const modelParameterFilter = (selectedModel, selectedDistribution) => {
     (model) => Object.keys(model)[0] === selectedModel
   );
 
-  const filteredParams = paramsList.filter((param) =>
+  let filteredParams = paramsList.filter((param) =>
     modelName[selectedModel].includes(param.name)
   );
 
   if (selectedDistribution === "Laplace") {
-    filteredParams.push(paramsList.find((param) => param.name === "scale"));
+    const scaleParam = paramsList.find((param) => param.name === "scale");
+    filteredParams = [scaleParam, ...filteredParams];
+    filteredParams = filteredParams.filter(
+      (param) => param.name !== "volatility"
+    );
   }
 
   return filteredParams;
