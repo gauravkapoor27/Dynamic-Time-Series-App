@@ -17,13 +17,13 @@ const ModelParametersContainer = ({
           type="range"
           min={
             selectedModel === "GARCH(1,1)" &&
-            ["volatility", "scale"].includes(param.name)
+            ["volatility", "scale", "gamma"].includes(param.name)
               ? 0
               : param.min
           }
           max={
             selectedModel === "GARCH(1,1)" &&
-            ["volatility", "scale"].includes(param.name)
+            ["volatility", "scale", "gamma"].includes(param.name)
               ? param.name === "volatility"
                 ? 1000
                 : 500

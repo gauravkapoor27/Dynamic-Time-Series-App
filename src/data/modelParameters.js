@@ -5,7 +5,7 @@ const modelList = [
   { "GARCH(1,1)": ["volatility", "mean level", "alpha0", "alpha1", "beta1"] },
 ];
 
-const distributionList = ["Normal", "Laplace"];
+const distributionList = ["Normal", "Laplace", "Cauchy"];
 
 const paramsList = [
   { name: "volatility", initial_val: 10, min: 0, max: 100000, scale: 1000 },
@@ -22,6 +22,7 @@ const paramsList = [
   { name: "alpha1", initial_val: 0.25, min: 0, max: 1000, scale: 1000 },
   { name: "beta1", initial_val: 0.25, min: 0, max: 1000, scale: 1000 },
   { name: "scale", initial_val: 5, min: 0, max: 50000, scale: 1000 },
+  { name: "gamma", initial_val: 5, min: 0, max: 50000, scale: 1000 },
 ];
 
 const parameters = {};

@@ -5,6 +5,7 @@ import garch from "./model_functions/garch";
 
 import normalRandomNumber from "./normalRandomNumber";
 import laplaceRandomNumber from "./laplaceRandomNumber";
+import cauchyRandomNumber from "./cauchyRandomNumber";
 
 const generateNewData = (
   lastVal,
@@ -25,6 +26,10 @@ const generateNewData = (
     err = params.volatility * normalRandomNumber();
   } else if (selectedDistribution === "Laplace") {
     err = laplaceRandomNumber(params.scale);
+  } else if (selectedDistribution === "Cauchy") {
+    console.log(params.gamma);
+    err = cauchyRandomNumber(params.gamma);
+    console.log(err);
   }
 
   if (selectedModel === "Brownian Motion") {

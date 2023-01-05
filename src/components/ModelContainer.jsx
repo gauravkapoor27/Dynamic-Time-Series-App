@@ -31,6 +31,7 @@ const ModelContainer = ({
                 ...params,
                 volatility: 0.5,
                 scale: 0.25,
+                gamma: 0.25,
               });
             }
           }}>

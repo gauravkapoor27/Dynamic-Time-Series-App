@@ -15,6 +15,12 @@ const modelParameterFilter = (selectedModel, selectedDistribution) => {
     filteredParams = filteredParams.filter(
       (param) => param.name !== "volatility"
     );
+  } else if (selectedDistribution === "Cauchy") {
+    const gammaParam = paramsList.find((param) => param.name === "gamma");
+    filteredParams = [gammaParam, ...filteredParams];
+    filteredParams = filteredParams.filter(
+      (param) => param.name !== "volatility"
+    );
   }
 
   return filteredParams;

@@ -94,6 +94,28 @@ body {
   cursor: pointer;
 }
 
+.params-container input {
+  flex: 1;
+  margin-left: 20px;
+  margin-right: 20px;
+  cursor: pointer;
+  appearance: none;
+  background: rgb(18, 19, 37);
+  outline: none;
+  border-radius: 10px;
+  height: 10px;
+}
+
+.params-container input::-webkit-slider-thumb {
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 1px solid black;
+  background: rgb(50, 122, 155);
+  cursor: pointer;
+}
+
 .model-container {
   width: 100%;
   display: flex;
@@ -107,12 +129,12 @@ body {
 }
 
 .params-container {
+  height: 100%;
   width: 100%;
   display: flex;
   flex-flow: row wrap;
+  justify-content: center;
   align-items: center;
-  justify-content: space-evenly;
-  height: 100px;
 }
 
 .model-selection {
