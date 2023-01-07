@@ -14,7 +14,8 @@ Other functionalities in the app include:
 - Ability to change the update speed of the time-series. This is inherently done by changing the setInterval rate in React.
 - The chart itself is built using the lightweight charts library in JavaScript, and it comes with its own interactions.
 
-The gifs below illustrate these functionalities.
+The gifs below illustrate these functionalities or try them yourself! 
+Note: Unfortunately, the gifs don't show the dropdown menu for some reason.
 
 ## Speed Control
 ![speed](https://user-images.githubusercontent.com/96806035/211164824-bfc4c04d-85fd-4746-96a6-5815cedff57a.gif)
@@ -43,7 +44,7 @@ The gifs below illustrate these functionalities.
 ## Mean-Reversion Rate Parameter
 ![mr_rev](https://user-images.githubusercontent.com/96806035/211164576-8991d7db-764f-4c9a-986f-fdfa22436b6b.gif)
 
-## Transition to GARCH Series
+## GARCH Series
 ![garch](https://user-images.githubusercontent.com/96806035/211164177-bbba2d27-c524-45b9-bb37-8e2bb6cb7a12.gif)
 
 ## GARCH Parameters Slider
