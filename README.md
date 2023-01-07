@@ -17,8 +17,10 @@ Other functionalities in the app include:
 The gifs below illustrate these functionalities.
 
 ## Speed Control
+![speed](https://user-images.githubusercontent.com/96806035/211164824-bfc4c04d-85fd-4746-96a6-5815cedff57a.gif)
 
-
+## Pause/Play/Reset Buttons
+![pause-play-reset](https://user-images.githubusercontent.com/96806035/211164758-15161f32-a9fd-4330-8192-0cc2490a2ab8.gif)
 
 ## Brownian Motion Volatility
 ![bm_vol](https://user-images.githubusercontent.com/96806035/211163953-0bc57688-9817-4bf5-b188-d842ac2220ab.gif)
@@ -28,6 +30,15 @@ The gifs below illustrate these functionalities.
 
 ## Transition to White Noise Series
 ![wn](https://user-images.githubusercontent.com/96806035/211164103-3ba16f47-8e4f-4c8a-8440-b81ae9ddae1c.gif)
+
+## White Noise Volatility
+![wn_vol](https://user-images.githubusercontent.com/96806035/211165045-5eae7485-465d-466b-8377-6c3f4055cf16.gif)
+
+## White Noise Mean
+![wn_mean](https://user-images.githubusercontent.com/96806035/211165048-8bf5c9b3-6f19-470d-9937-9d4a01567fad.gif)
+
+## Mean-Reversion Volatility
+![mr_vol](https://user-images.githubusercontent.com/96806035/211164664-e6678af3-2d3c-4d7f-a59e-20af41cc8939.gif)
 
 ## Mean-Reversion Rate Parameter
 ![mr_rev](https://user-images.githubusercontent.com/96806035/211164576-8991d7db-764f-4c9a-986f-fdfa22436b6b.gif)
@@ -44,9 +55,8 @@ The gifs below illustrate these functionalities.
 ## Brownian Motion with Cauchy Distribution
 ![bm_cauchy](https://user-images.githubusercontent.com/96806035/211164047-4ed4373f-043b-4737-b5db-89d1d5757a16.gif)
 
-
-
-
+## White Noise with Cauchy Distribution
+![wn_cauchy](https://user-images.githubusercontent.com/96806035/211164901-06a1c43a-4ad0-4b8f-9c3f-8301d6fee31c.gif)
 
 ## Garch with Laplace Distribution
 ![garch_laplace](https://user-images.githubusercontent.com/96806035/211164261-d66373b3-d726-46fa-a2b2-6f59337b5550.gif)
