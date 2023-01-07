@@ -17,7 +17,7 @@ Other functionalities in the app include:
 
 See the gifs below for illustrations of these functionalities, or try out the app yourself!
 
-Note: Unfortunately, the gifs don't show the dropdown menu for some reason.
+Note: Unfortunately, the gifs don't show the dropdown menu, but they weren't that special anyway.
 
 ## Speed Control
 ![speed](https://user-images.githubusercontent.com/96806035/211164824-bfc4c04d-85fd-4746-96a6-5815cedff57a.gif)
