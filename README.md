@@ -1,6 +1,6 @@
 # Dynamic Time Series
 
-Thi full-fledged project dynamically visualized several stochastic processes on a chart. Currently, these processes include Brownian motion (Weiner process),
+This project dynamically visualizes several stochastic processes on a chart. Currently, these processes include Brownian motion (Wiener process),
 a white noise series, a mean-reversion process, and a GARCH(1,1) process. Furthermore, for every model there is an option to change the distribution of
 innovations between Gaussian, Laplace, and Cauchy. I am currently in the process of adding more models and distributions.
 
@@ -13,6 +13,7 @@ Other functionalities in the app include:
 - Chart reset functionality.
 - Ability to change the update speed of the time-series. This is inherently done by changing the setInterval rate in React.
 - The chart itself is built using the lightweight charts library in JavaScript, and it comes with its own interactions.
+- With GARCH in particular, the slider values automatically adjust with user input to ensure stationarity is imposed.
 
 The gifs below illustrate these functionalities or try them yourself! 
 
