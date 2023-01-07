@@ -15,7 +15,7 @@ Other functionalities in the app include:
 - The chart itself is built using the lightweight charts library in JavaScript, and it comes with its own interactions.
 - With GARCH in particular, the slider values automatically adjust with user input to ensure stationarity is imposed.
 
-The gifs below illustrate these functionalities or try them yourself! 
+See the gifs below illustrate these functionalities or try them yourself! 
 
 Note: Unfortunately, the gifs don't show the dropdown menu for some reason.
 
